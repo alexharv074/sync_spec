@@ -52,7 +52,10 @@ class SyncSpec
   # Install a .fixtures.yml file for a Puppet module, with repositories to checkout interpolated.
 
   def install_fixtures
-    fixtures = @config[@origin]['fixtures'].to_yaml.chop.gsub("---\n", '').gsub("\n", "\n  ")
+    fixtures = String.new
+    if @config[@origin].has_key?('fixtures')
+      fixtures = @config[@origin]['fixtures'].to_yaml.chop.gsub("---\n", '').gsub("\n", "\n  ")
+    end
 
     subs = {
       '##FIXTURES##'   => fixtures,
