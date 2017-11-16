@@ -5,3 +5,5 @@
   fixtures:
     forge_modules:
       firewall: puppetlabs/firewall
+'https://github.com/alexharv074/puppet-squid.git':
+  repo_type: puppet_module
