@@ -25,12 +25,18 @@ class SyncSpec
     @skel      = "#{@repo_type}_skel"
 
     @short_name = @origin.gsub(/^.*-/, '').gsub(/\.git/, '')
+  end
 
+  def sync
     case @repo_type
     when 'puppet_module'
       sync_spec_puppet_module
+    when 'rspec_only'
+      sync_rspec_only
     end
   end
+
+ private
 
   # Install Rspec set up files and templates for an ordinary Puppet module.
 
@@ -47,6 +53,12 @@ class SyncSpec
           ["#{@templates}/init_spec.rb"], 'spec/classes/init_spec.rb')
       end
     end
+  end
+
+  # Install Rspec for data-only tests.
+
+  def sync_rspec_only
+    copy_skel_files
   end
 
   # Install a .fixtures.yml file for a Puppet module, with repositories to checkout interpolated.
@@ -133,4 +145,4 @@ class SyncSpec
   end
 end
 
-SyncSpec.new
+SyncSpec.new.sync

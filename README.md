@@ -1,7 +1,5 @@
 # sync_spec.rb
 
-Release 1.0.0.
-
 ## Overview
 
 This project provides centralised management of the Rspec setup files for my Puppet modules.
@@ -94,3 +92,7 @@ RSpec.configure do |c|
   }
 end
 ~~~
+
+#### `rspec_only`
+
+Deploys files for Rspec-only data tests.

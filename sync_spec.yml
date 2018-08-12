@@ -7,3 +7,7 @@
       firewall: puppetlabs/firewall
 'https://github.com/alexharv074/puppet-squid.git':
   repo_type: puppet_module
+'https://github.com/alexharv074/puppet-disable_transparent_hugepage.git':
+  repo_type: puppet_module
+'git@github.com:alexharv074/alexharv074.github.io.git':
+  repo_type: rspec_only
