@@ -1,13 +1,13 @@
 ---
-'https://github.com/alexharv074/puppet-firewall_multi.git':
+'git@github.com:alexharv074/puppet-firewall_multi.git':
   no_init_spec: true
   repo_type: puppet_module
   fixtures:
     forge_modules:
       firewall: puppetlabs/firewall
-'https://github.com/alexharv074/puppet-squid.git':
+'git@github.com:alexharv074/puppet-squid.git':
   repo_type: puppet_module
-'https://github.com/alexharv074/puppet-disable_transparent_hugepage.git':
+'git@github.com:alexharv074/puppet-disable_transparent_hugepage.git':
   repo_type: puppet_module
 'git@github.com:alexharv074/alexharv074.github.io.git':
   repo_type: rspec_only
