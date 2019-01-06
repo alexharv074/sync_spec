@@ -1,7 +1,8 @@
 ---
 'git@github.com:alexharv074/puppet-firewall_multi.git':
-  no_init_spec: true
   repo_type: puppet_module
+  no_init_spec: true
+  code_coverage: 100
   fixtures:
     forge_modules:
       firewall: puppetlabs/firewall

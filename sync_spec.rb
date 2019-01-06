@@ -89,8 +89,17 @@ class SyncSpec
       end
     end
 
+    code_coverage = String.new
+    if @config[@origin].has_key?('code_coverage')
+      percent = @config[@origin]['code_coverage']
+      code_coverage = "  c.after(:suite) do
+    RSpec::Puppet::Coverage.report!(#{percent})
+  end"
+    end
+
     subs = {
-      '##STUBBED_FACTS##'  => stubbed_facts,
+      '##STUBBED_FACTS##' => stubbed_facts,
+      '##CODE_COVERAGE##' => code_coverage,
     }
 
     install_template(["#{@templates}/spec_helper.rb"], 'spec/spec_helper.rb', subs)

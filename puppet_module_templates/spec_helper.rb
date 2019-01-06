@@ -21,4 +21,5 @@ RSpec.configure do |c|
   c.default_facts = {
     :ipaddress => '1.1.1.1',
 ##STUBBED_FACTS##  }
+##CODE_COVERAGE##
 end
